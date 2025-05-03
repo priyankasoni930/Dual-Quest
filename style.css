@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 
 * {
   margin: 0;
@@ -12,11 +13,11 @@ html {
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Luckiest Guy", sans-serif;
   font-weight: 400;
   height: 100vh;
-  color: #333;
-  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  color: #1e3a8a;
+  background-image: linear-gradient(to top left, #a1c4fd 0%, #c2e9fb 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,6 +44,7 @@ main {
   flex-direction: column;
   align-items: center;
   transition: all 0.75s;
+  position: relative;
 }
 
 /* ELEMENTS */
@@ -59,7 +61,7 @@ main {
 .score {
   font-size: 8rem;
   font-weight: 300;
-  color: #c7365f;
+  color: #60a5fa;
   margin-bottom: auto;
 }
 
@@ -78,7 +80,7 @@ main {
 }
 
 .current {
-  background-color: #c7365f;
+  background-color: #60a5fa;
   opacity: 0.8;
   border-radius: 9px;
   color: #fff;
@@ -92,7 +94,7 @@ main {
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: 1.7rem;
-  color: #ddd;
+  color: #bfdbfe;
 }
 
 .current-score {
@@ -104,7 +106,7 @@ main {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: #444;
+  color: #1e3a8a;
   background: none;
   border: none;
   font-family: inherit;
@@ -158,14 +160,75 @@ main {
 }
 
 .player--winner {
-  background-color: #2f2f2f;
+  background-color: #93c5fd;
 }
 
 .player--winner .name {
   font-weight: 700;
-  color: #c7365f;
+  color: #1e3a8a;
+}
+
+/* Status Images (Win/Lose) */
+.status-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 18rem;
+  z-index: 10;
+}
+
+/* Win Message */
+.win-message {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 6rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 3px 3px 0 #1e3a8a, -1px -1px 0 #1e3a8a, 1px -1px 0 #1e3a8a,
+    -1px 1px 0 #1e3a8a, 1px 1px 0 #1e3a8a;
+  z-index: 20;
 }
 
 .hidden {
   display: none;
+}
+
+/* Timer Display */
+.timer {
+  position: absolute;
+  top: 12rem; /* Position below the new game button */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem; /* Adjust size as needed */
+  color: #1e3a8a; /* Match button text color */
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  z-index: 5; /* Ensure visibility */
+  /* Font family should be inherited */
+}
+
+/* Turn Indicator Arrows */
+.turn-arrow {
+  position: absolute;
+  top: 5rem; /* Adjust as needed */
+  font-size: 4rem; /* Make arrow visible */
+  color: #1e3a8a; /* Match theme color */
+  z-index: 5;
+  transition: all 0.5s;
+}
+
+.arrow--0 {
+  left: 25%; /* Position above player 0 section */
+  transform: translateX(-50%);
+}
+
+.arrow--1 {
+  left: 75%; /* Position above player 1 section */
+  transform: translateX(-50%);
 }

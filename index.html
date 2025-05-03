@@ -9,9 +9,25 @@
   </head>
   <body>
     <main>
+      <!-- Turn Indicators -->
+      <div class="turn-arrow arrow--0 hidden" id="arrow--0">▼</div>
+      <div class="turn-arrow arrow--1 hidden" id="arrow--1">▼</div>
+
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">43</p>
+        <img
+          src="win.webp"
+          alt="Winner"
+          class="status-image hidden"
+          id="win-image--0"
+        />
+        <img
+          src="lose.webp"
+          alt="Loser"
+          class="status-image hidden"
+          id="lose-image--0"
+        />
         <div class="current">
           <p class="current-label">Current</p>
           <p class="current-score" id="current--0">0</p>
@@ -20,6 +36,18 @@
       <section class="player player--1">
         <h2 class="name" id="name--1">Player 2</h2>
         <p class="score" id="score--1">24</p>
+        <img
+          src="win.webp"
+          alt="Winner"
+          class="status-image hidden"
+          id="win-image--1"
+        />
+        <img
+          src="lose.webp"
+          alt="Loser"
+          class="status-image hidden"
+          id="lose-image--1"
+        />
         <div class="current">
           <p class="current-label">Current</p>
           <p class="current-score" id="current--1">0</p>
@@ -27,9 +55,13 @@
       </section>
 
       <img src="dice-5.png" alt="Playing dice" class="dice" />
+      <div class="timer" id="timer">02:00</div>
       <button class="btn btn--new">🔄 New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
+
+      <!-- Win Message -->
+      <div class="win-message hidden" id="win-message">Player X Won!</div>
     </main>
     <script src="script.js"></script>
   </body>
